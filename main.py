@@ -223,6 +223,5 @@ played = 0
 rounds = 0
 percent = 0
 
-
 while a:
     a = deal_cards(score, played, rounds, percent)
