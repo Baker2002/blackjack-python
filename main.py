@@ -1,5 +1,6 @@
 import random
 
+
 def draw_card(card, card2, card3):
     lines = [
         [f'┌─────────┐'],
@@ -134,8 +135,10 @@ def draw_card(card, card2, card3):
             [f'']
         ]
 
-    for a in range(0,8):
+    for a in range(0 , 8):
         print(f"{lines[a][0]} {lines2[a][0]} {lines3[a][0]}")
+
+
 def win_condition(ai_sum, user_sum):
     if user_sum < 22 and ai_sum > 21:
         return True
@@ -145,6 +148,8 @@ def win_condition(ai_sum, user_sum):
         return 2
     else:
         return False
+
+
 def deal_cards(score, played, rounds, percent_ask_card):
     user_card1 = random.choice(cards)
     user_card2 = random.choice(cards)
@@ -152,9 +157,9 @@ def deal_cards(score, played, rounds, percent_ask_card):
     ai_card1 = random.choice(cards)
     user_sum = user_card1 + user_card2
     print(f"You got: {user_card1} , {user_card2} ({user_sum})")
-    draw_card(user_card1, user_card2,0)
+    draw_card(user_card1, user_card2, 0)
     print(f"Opponent got: {ai_card1}\n")
-    draw_card(ai_card1,0,0)
+    draw_card(ai_card1, 0, 0)
     q = input("do you want to draw one more card? (y/yes)\n")
     if q == "yes" or q == "y":
         user_card3 = random.choice(cards)
@@ -170,9 +175,7 @@ def deal_cards(score, played, rounds, percent_ask_card):
     if user_card3 == 11 and user_sum > 21:
         user_card3 -= 10
         user_sum -= 10
-
-
-    ai_card2 = random.choice(cards)
+    ai_card2=random.choice(cards)
     ai_sum = ai_card1 + ai_card2
     ai_card3 = 0
     if ai_sum < 17:
@@ -182,7 +185,7 @@ def deal_cards(score, played, rounds, percent_ask_card):
 
     if user_card3 > 0:
         print(f"\nSum of your cards is: {user_sum} ({user_card1} + {user_card2} + {user_card3})")
-        draw_card(user_card1,user_card2,user_card3)
+        draw_card(user_card1, user_card2, user_card3)
     else:
         print(f"Sum of your cards is: {user_sum} ({user_card1} + {user_card2})")
         draw_card(user_card1,user_card2,0)
