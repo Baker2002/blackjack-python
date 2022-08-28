@@ -232,3 +232,4 @@ percent = int(input("Percentage of drawing third card"))
 while a[0]:
     a = deal_cards(score, played, rounds, percent)
     rounds = a[1]
+input("end")
