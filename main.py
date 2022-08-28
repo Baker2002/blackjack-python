@@ -160,9 +160,9 @@ def deal_cards(score, played, rounds, percent_ask_card):
     draw_card(user_card1, user_card2, 0)
     print(f"Opponent got: {ai_card1}\n")
     draw_card(ai_card1, 0, 0)
-    q = input("do you want to draw one more card? (y/yes)\n")
-    if q == "yes" or q == "y":
-        user_card3 = random.choice(cards)
+    #q = input("do you want to draw one more card? (y/yes)\n")
+    #if q == "yes" or q == "y":
+    #    user_card3 = random.choice(cards)
 
     user_sum = user_sum + user_card3
 
