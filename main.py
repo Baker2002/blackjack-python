@@ -149,8 +149,13 @@ def win_condition(ai_sum, user_sum):
     else:
         return False
 
-
-def deal_cards(score, played, rounds, percent_ask_card):
+def percentage_ask_card(percent):
+    br = random.randint(0,99)
+    if percent > br:
+        return True
+    else:
+        return False
+def deal_cards(score, played, rounds, percent):
     user_card1 = random.choice(cards)
     user_card2 = random.choice(cards)
     user_card3 = 0
@@ -161,8 +166,10 @@ def deal_cards(score, played, rounds, percent_ask_card):
     print(f"Opponent got: {ai_card1}\n")
     draw_card(ai_card1, 0, 0)
     #q = input("do you want to draw one more card? (y/yes)\n")
-    #if q == "yes" or q == "y":
-    #    user_card3 = random.choice(cards)
+    if percentage_ask_card(percent):
+        user_card3 = random.choice(cards)
+
+
 
     user_sum = user_sum + user_card3
 
@@ -207,22 +214,23 @@ def deal_cards(score, played, rounds, percent_ask_card):
         score[2] = score[2] + 1
     win_percentage = round((score[0] / (score[0] + score[1] + score[2])) * 100, 2)
     print(f"Score: {score[0]}/{score[1]}/{score[2]} (W/D/L) Win percentage: {win_percentage}%\n")
-    q = input("Do you want to play again? (y/n)")
-
-    if q == "y":
-        return True
+    rounds = rounds - 1
+    if rounds > 0:
+        return [True, rounds]
     else:
-        return False
+        return [False, rounds]
 
 
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-a = True
+a = [True, 0]
 score = [0, 0, 0] # W/D/L
 played = 0
 rounds = 0
 percent = 0
 
-
-while a:
+rounds = int(input("How many rounds of playing"))
+percent = int(input("Percentage of drawing third card"))
+while a[0]:
     a = deal_cards(score, played, rounds, percent)
+    rounds = a[1]
