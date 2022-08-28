@@ -137,8 +137,6 @@ def draw_card(card, card2, card3):
 
     for a in range(0 , 8):
         print(f"{lines[a][0]} {lines2[a][0]} {lines3[a][0]}")
-
-
 def win_condition(ai_sum, user_sum):
     if user_sum < 22 and ai_sum > 21:
         return True
@@ -148,7 +146,6 @@ def win_condition(ai_sum, user_sum):
         return 2
     else:
         return False
-
 def percentage_ask_card(percent):
     br = random.randint(0,99)
     if percent > br:
@@ -156,6 +153,7 @@ def percentage_ask_card(percent):
     else:
         return False
 def deal_cards(score, played, rounds, percent):
+
     user_card1 = random.choice(cards)
     user_card2 = random.choice(cards)
     user_card3 = 0
@@ -221,13 +219,13 @@ def deal_cards(score, played, rounds, percent):
         return [False, rounds]
 
 
-
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 a = [True, 0]
 score = [0, 0, 0] # W/D/L
 played = 0
 rounds = 0
 percent = 0
+
 
 rounds = int(input("How many rounds of playing"))
 percent = int(input("Percentage of drawing third card"))
