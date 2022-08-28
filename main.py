@@ -215,6 +215,7 @@ def deal_cards(score, played, rounds, percent_ask_card):
         return False
 
 
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 a = True
 score = [0, 0, 0] # W/D/L
