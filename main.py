@@ -137,8 +137,6 @@ def draw_card(card, card2, card3):
 
     for a in range(0 , 8):
         print(f"{lines[a][0]} {lines2[a][0]} {lines3[a][0]}")
-
-
 def win_condition(ai_sum, user_sum):
     if user_sum < 22 and ai_sum > 21:
         return True
@@ -148,8 +146,6 @@ def win_condition(ai_sum, user_sum):
         return 2
     else:
         return False
-
-
 def deal_cards(score, played, rounds, percent_ask_card):
     user_card1 = random.choice(cards)
     user_card2 = random.choice(cards)
@@ -213,7 +209,6 @@ def deal_cards(score, played, rounds, percent_ask_card):
         return True
     else:
         return False
-
 
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
